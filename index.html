@@ -10,25 +10,375 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div class="logo">
             <img src="assets/images/logo.png" alt="Logo REFRIO" class="logo-img">
             <span>REFRIO</span>
         </div>
-        <div class="header-right">
+        <div class="header-right" id="mobileMenu">
             <nav>
-                <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
-                <li><a href="#how-it-works" data-i18n="nav_how">Cómo Funciona</a></li>
-                <li><a href="#pricing" data-i18n="nav_pricing">Precios</a></li>
-                <li><a href="#team" data-i18n="nav_team">Equipo</a></li>
-                <li><a href="#demo-form" data-i18n="nav_contact">Contacto</a></li>
+                <a href="#hero" data-i18n="nav_home">Inicio</a>
+                <a href="#about" data-i18n="nav_about">Quiénes Somos</a>
+                <a href="#features" data-i18n="nav_what">Lo que hacemos</a>
+                <a href="#pricing" data-i18n="nav_pricing">Planes</a>
+                <a href="#testimonials" data-i18n="nav_cases">Casos de éxito</a>
+                <a href="#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
             <div class="nav-actions">
-                <button class="btn-outline" data-i18n="btn_login" onclick="window.location.href='dashboard.html'">Iniciar Sesión</button>
-                <button class="btn-primary" data-i18n="btn_register" onclick="window.location.href='registro.html'">Registrarse</button>
-                <div class="lang-toggle" onclick="toggleLanguage()">
-                    <span id="lang-es" class="active">Es</span> | <span id="lang-en">En</span>
+                <button id="btnLogin" class="btn-outline" data-i18n="btn_login">INICIAR SESIÓN</button>
+                <button id="btnRegister" class="btn-primary" data-i18n="btn_register">REGISTRARSE</button>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <div class="lang-toggle">
+                <span id="lang-es" class="active" onclick="switchLanguage('es')">Es</span> <span style="color:var(--text-gray)">|</span> <span id="lang-en" onclick="switchLanguage('en')">En</span>
+            </div>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="background-image">
+            <img src="assets/images/fondo-hero.png" alt="Fondo Hero">
+        </div>
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">Sistema para la gestión de inventario y distribución de productos perecibles</h1>
+            <h3 data-i18n="hero_subtitle">Monitorea temperatura, gestiona stock, reduce pérdidas y mejora tus operaciones logísticas desde un solo lugar.</h3>
+            <button class="btn-primary btn-large action-register-btn" data-i18n="btn_demo">PRUEBA AHORA</button>
+        </div>
+    </section>
+
+    <!-- VISIÓN Y MISIÓN -->
+    <section id="about" class="about-section bg-light">
+        <div class="about-container">
+            <div class="about-row">
+                <div class="about-image">
+                    <img src="assets/images/vision.jpg" alt="Visión Operario">
+                </div>
+                <div class="about-text">
+                    <h2 data-i18n="vision_title">Visión</h2>
+                    <p data-i18n="vision_desc">Ser la plataforma líder en el mercado para optimizar la cadena de frío, garantizando la frescura y calidad en cada entrega.</p>
+                </div>
+            </div>
+            <div class="about-row reverse">
+                <div class="about-image">
+                    <img src="assets/images/mision.jpg" alt="Misión Camión">
+                </div>
+                <div class="about-text">
+                    <h2 data-i18n="mision_title">Misión</h2>
+                    <p data-i18n="mision_desc">Ofrecer soluciones tecnológicas innovadoras para monitorear inventarios y la cadena de frío, conectando de forma eficiente a toda la red logística.</p>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
+
+    <!-- VENTAJAS -->
+    <section id="features" class="features-section bg-dark">
+        <h2 class="title white-text" data-i18n="feat_title">Ventajas</h2>
+        <div class="grid features-grid">
+            <div class="feature-card glass">
+                <div class="icon-wrapper"><img src="assets/images/icon-temp.svg" alt="Temp"></div>
+                <h4 data-i18n="feat1_title">Control de Temperatura</h4>
+                <p data-i18n="feat1_desc">Monitoreo continuo y alertas automáticas para mantener la cadena de frío intacta en todo momento.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="icon-wrapper"><img src="assets/images/icon-gps.svg" alt="GPS"></div>
+                <h4 data-i18n="feat2_title">Rastreo GPS en Tiempo Real</h4>
+                <p data-i18n="feat2_desc">Visibilidad completa de tu flota con actualizaciones cada segundo y geofencing inteligente.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="icon-wrapper"><img src="assets/images/icon-analytics.svg" alt="Analítica"></div>
+                <h4 data-i18n="feat3_title">Analítica operativa</h4>
+                <p data-i18n="feat3_desc">Dashboards intuitivos con métricas clave y predicciones basadas en IA para optimizar rutas.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="icon-wrapper"><img src="assets/images/icon-inventory.svg" alt="Inventario"></div>
+                <h4 data-i18n="feat4_title">Gestión de Inventario</h4>
+                <p data-i18n="feat4_desc">Control automático de stock, alertas de vencimiento y optimización de espacios de almacenamiento.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="icon-wrapper"><img src="assets/images/icon-replenish.svg" alt="Reabastecimiento"></div>
+                <h4 data-i18n="feat5_title">Reabastecimiento inteligente</h4>
+                <p data-i18n="feat5_desc">Anticipa quiebres de stock y genera recomendaciones de reposición según demanda.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="icon-wrapper"><img src="assets/images/icon-dispatch.svg" alt="Despacho"></div>
+                <h4 data-i18n="feat6_title">Carga y despacho</h4>
+                <p data-i18n="feat6_desc">Algoritmos inteligentes que reducen tiempos de entrega y costos operativos hasta en un 30%.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PASOS -->
+    <section id="steps" class="steps-section bg-light">
+        <h2 class="title" data-i18n="steps_title">Empieza a optimizar en 4 pasos simples</h2>
+        <p class="subtitle" data-i18n="steps_subtitle">No necesitas conocimientos técnicos. Te guiamos en todo el proceso.</p>
+        <div class="grid steps-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h4 data-i18n="step1_title">Integra tu operación</h4>
+                <p data-i18n="step1_desc">Conectamos REFRIO con tus procesos logísticos y levantamos la información clave.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h4 data-i18n="step2_title">Configura inventario</h4>
+                <p data-i18n="step2_desc">Define productos, lotes, niveles críticos y parámetros de monitoreo.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h4 data-i18n="step3_title">Activa monitoreo</h4>
+                <p data-i18n="step3_desc">Supervisa temperatura, stock, trazabilidad y eventos en tiempo real.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <h4 data-i18n="step4_title">Optimiza decisiones</h4>
+                <p data-i18n="step4_desc">Gestiona salidas, reabastecimiento y análisis desde un solo lugar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS DE ÉXITO -->
+    <section id="testimonials" class="testimonials-section bg-gray">
+        <h2 class="title" data-i18n="test_title">Casos de éxito</h2>
+        <p class="subtitle" data-i18n="test_subtitle">Conoce lo que dicen de nosotros en el mercado</p>
+        <div class="testimonial-slider">
+            <button class="slider-arrow left" id="prevTestimonial">&lt;</button>
+            
+            <div id="testimonialTrack" style="width: 100%; max-width: 700px;">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card active" data-index="0">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Gracias a REFRIO hemos reducido nuestras mermas en un 40% durante el último trimestre. El control de temperatura en tiempo real nos salvó."</p>
+                    <div class="author">
+                        <div class="avatar"><img src="assets/images/avatar.jpg" alt="Ing. Ernesto Castro"></div>
+                        <div class="author-info">
+                            <strong>Ing. Ernesto Castro</strong>
+                            <span>Gerente de Logística - Alimentos del Valle</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card" data-index="1" style="display: none;">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"La plataforma es súper intuitiva. Desde que implementamos el rastreo y las alertas, hemos optimizado nuestras rutas de entrega un 25%."</p>
+                    <div class="author">
+                        <div class="avatar"><img src="assets/images/avatar2.jpg" alt="Mariana Ruiz" onerror="this.src='assets/images/avatar.jpg'"></div>
+                        <div class="author-info">
+                            <strong>Mariana Ruiz</strong>
+                            <span>Jefa de Operaciones - Supermercados del Norte</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card" data-index="2" style="display: none;">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"El soporte y la analítica automatizada nos permitieron escalar nuestra flota sin perder el control del stock. Es una herramienta indispensable hoy en día."</p>
+                    <div class="author">
+                        <div class="avatar"><img src="assets/images/avatar3.jpg" alt="Carlos Mendoza" onerror="this.src='assets/images/avatar.jpg'"></div>
+                        <div class="author-info">
+                            <strong>Carlos Mendoza</strong>
+                            <span>Director General - Distribuidora San Juan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-arrow right" id="nextTestimonial">&gt;</button>
+        </div>
+        <div class="slider-dots" id="testimonialDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="pricing" class="pricing-section bg-white">
+        <h2 class="title" data-i18n="prc_title">Planes</h2>
+        <p class="subtitle" data-i18n="prc_subtitle">Elige el plan que mejor se adapte a tu operación</p>
+        
+        <div class="pricing-toggle">
+            <span id="labelMensual" class="active" style="cursor: pointer;">Mensual</span>
+            <div class="toggle-switch" id="billingToggle"></div>
+            <span id="labelAnual" style="cursor: pointer;">Anual</span>
+        </div>
+        
+        <div class="grid pricing-grid">
+            <div class="price-card basic">
+                <h4>Básico</h4>
+                <p class="desc">Para pequeñas operaciones</p>
+                <h2 id="priceBasic">S/ 59 <span>/mo</span></h2>
+                <ul>
+                    <li>✓ Hasta 5 unidades</li>
+                    <li>✓ Monitoreo básico</li>
+                    <li>✓ Control de temperatura</li>
+                </ul>
+                <button class="btn-outline action-register-btn">Comenzar</button>
+            </div>
+            <div class="price-card professional">
+                <div class="badge">Más Popular</div>
+                <h4>Profesional</h4>
+                <p class="desc">Para operaciones en crecimiento</p>
+                <h2 id="pricePro">S/ 129 <span>/mo</span></h2>
+                <ul>
+                    <li>✓ Hasta 25 vehículos</li>
+                    <li>✓ Rastreo en tiempo real</li>
+                    <li>✓ Analítica avanzada + IA</li>
+                    <li>✓ Soporte prioritario</li>
+                </ul>
+                <button class="btn-light action-register-btn">Comenzar</button>
+            </div>
+            <div class="price-card enterprise">
+                <h4>Empresarial</h4>
+                <p class="desc">Para grandes flotas</p>
+                <h2 id="priceEnt">S/ 249 <span>/mo</span></h2>
+                <ul>
+                    <li>✓ Operación escalable</li>
+                    <li>✓ Módulos personalizados</li>
+                    <li>✓ SLA garantizado</li>
+                </ul>
+                <button class="btn-outline action-register-btn">Contactar Ventas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONÓCENOS (VIDEOS) -->
+    <section id="about-us" class="videos-section bg-gray">
+        <h2 class="title">Conócenos</h2>
+        <p class="subtitle">Conoce el equipo Refrio y la tecnología detrás de nuestra plataforma.</p>
+        <div class="grid videos-grid">
+            <div class="video-card">
+                <img src="assets/images/video1.jpg" alt="Nuestra Tecnología" class="video-thumb">
+                <div class="play-btn">▶</div>
+                <div class="video-info">
+                    <h4>Nuestra Tecnología</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <img src="assets/images/video2.jpg" alt="Innovación en Logística" class="video-thumb">
+                <div class="play-btn">▶</div>
+                <div class="video-info">
+                    <h4>Innovación en Logística: Conoce al equipo detrás de la plataforma Refrio</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="contact-section bg-dark">
+        <div class="contact-container">
+            <div class="contact-text">
+                <h2 class="white-text">Contacto</h2>
+                <h3 class="white-text" style="margin-top: 40px; margin-bottom: 20px;">Pruebe Refrio y maximice la rentabilidad de su inventario</h3>
+                <p class="white-text" style="opacity: 0.8; margin-bottom: 20px;">Más de 10,000 bodegas y empresas peruanas confían en nosotros para monitorear y garantizar la cadena de frío. Deja tus datos y nuestro equipo se contactará contigo para una demostración.</p>
+                <ul class="contact-benefits">
+                    <li>✓ Sin compromisos</li>
+                    <li>✓ Respuesta inmediata</li>
+                    <li>✓ Soporte personalizado</li>
+                </ul>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="contactForm" class="form-card">
+                    <div class="input-group">
+                        <label>Nombres y Apellidos *</label>
+                        <input type="text" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Empresa / Razón Social *</label>
+                        <input type="text" placeholder="Ej. Empresa S.A." required>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo Electrónico *</label>
+                        <input type="email" placeholder="ejemplo@empresa.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Número de Celular *</label>
+                        <input type="tel" placeholder="+51 999 888 777" required>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer bg-white">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Logo REFRIO" class="logo-img">
+                    <span style="color: var(--secondary-dark); font-weight: 700; font-size: 20px;">REFRIO</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Producto</a></li>
+                    <li><a href="#">Características</a></li>
+                    <li><a href="#">Planes</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Empresa</a></li>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="#">Casos de Éxito</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Refrio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE INICIO DE SESIÓN / REGISTRO -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2 id="modalTitle" class="title" style="font-size: 24px; margin-bottom: 24px; text-align: left;">Iniciar Sesión</h2>
+            <form id="authForm">
+                <div class="input-group">
+                    <label>Correo Electrónico *</label>
+                    <input type="email" id="authEmail" placeholder="ejemplo@empresa.com" required>
+                </div>
+                <!-- Campo de celular (solo visible en registro) -->
+                <div class="input-group" id="phoneGroup" style="display: none;">
+                    <label>Número de Celular *</label>
+                    <input type="tel" id="authPhone" placeholder="+51 999 888 777">
+                </div>
+                <div class="input-group">
+                    <label>Contraseña *</label>
+                    <input type="password" id="authPassword" placeholder="Min. 8 caracteres, 1 mayúscula y 1 número" 
+                           required 
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
+                           title="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula, una letra minúscula y un número.">
+                </div>
+                <button type="submit" class="btn-primary full-width" id="authSubmitBtn">Ingresar</button>
+            </form>
+            <div class="auth-switch">
+                <span id="authSwitchText">¿No tienes cuenta?</span> 
+                <a href="#" id="authSwitchLink">Regístrate aquí</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
