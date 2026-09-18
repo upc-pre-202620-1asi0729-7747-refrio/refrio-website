@@ -275,3 +275,41 @@ nav a:hover { color: var(--primary); }
 .auth-switch { margin-top: 24px; text-align: center; font-size: 14px; color: var(--text-gray); }
 .auth-switch a { color: var(--primary); font-weight: 600; margin-left: 5px; transition: 0.2s; }
 .auth-switch a:hover { text-decoration: underline; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+    .price-card.professional { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 16px; padding: 16px; }
+    .hero { padding: 80px 20px; min-height: auto; }
+    .header-right { width: 100%; justify-content: center; }
+    .header-right nav { display: none; }
+    .about-row, .about-row.reverse, .contact-container, .videos-grid { flex-direction: column; gap: 30px; }
+    .features-grid, .steps-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand .logo { justify-content: center; }
+    
+    .modal-content { padding: 30px 24px; width: 95%; }
+}
+
+/* MENU HAMBURGUESA */
+@media (max-width: 992px) {
+    .hamburger-btn { display: flex; }
+    .header-right {
+        position: fixed; top: 69px; left: 0; width: 100%; height: calc(100vh - 69px);
+        background: var(--white); flex-direction: column; justify-content: flex-start;
+        align-items: center; gap: 32px; padding: 40px 24px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1); transform: translateY(-120%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 99; overflow-y: auto;
+    }
+    .header-right.open { transform: translateY(0); }
+    .header-right nav { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; }
+    .header-right nav a { font-size: 17px; font-weight: 600; color: var(--secondary-dark); }
+    .header-right .nav-actions { display: flex; flex-direction: column; width: 100%; max-width: 280px; gap: 12px; }
+    .header-right .nav-actions button { width: 100%; padding: 12px; font-size: 15px; }
+}
