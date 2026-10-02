@@ -140,7 +140,7 @@ Carga Asíncrona: El script principal realiza una petición fetch al archivo cor
 
 Mapeo: La función de renderizado reemplaza el contenido textual preservando la estructura y eventos del elemento.
 
-### 🎨 Diseño y Buenas Prácticas
+### Diseño y Buenas Prácticas
 
 Accesibilidad (a11y): Contraste cromático conforme a pautas WCAG, navegación estructurada por teclado y soporte de etiquetas descriptivas.
 
@@ -150,18 +150,18 @@ Compatibilidad Multiplataforma: Optimización para pantallas móviles, tabletas 
 
 ---
 
-### 👥 Equipo Fundador
+### Equipo Fundador
 
 Refrio fue conceptualizado y desarrollado por un equipo multidisciplinario:
 
-- **César Alca**
-- **Adriano Centeno**
-- **Bernie Rivas**
-- **Rodrigo Saavedra**
-- **Jose Tello**
+- **César Alca Morán**
+- **Adriano Centeno León**
+- **Bernie Rivas Méndez**
+- **Rodrigo Saavedra Flores**
+- **Jose Tello Lima**
 
 ---
 
-### 📄 Licencia
+### Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
