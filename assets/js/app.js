@@ -134,77 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let savedLang = localStorage.getItem('refrio_lang') || 'es';
     switchLanguage(savedLang);
 
-    // 3. Modal de Autenticación
-    const btnLogin = document.getElementById('btnLogin');
-    const btnRegister = document.getElementById('btnRegister');
-    const authModal = document.getElementById('authModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    
-    const modalTitle = document.getElementById('modalTitle');
-    const authSubmitBtn = document.getElementById('authSubmitBtn');
-    const phoneGroup = document.getElementById('phoneGroup');
-    const authPhone = document.getElementById('authPhone');
-    const authForm = document.getElementById('authForm');
-    const authSwitchText = document.getElementById('authSwitchText');
-    const authSwitchLink = document.getElementById('authSwitchLink');
-    
-    let isLoginMode = true; 
-
-    function openModal(mode = 'login') {
-        isLoginMode = (mode === 'login');
-        updateModalUI();
-        authModal.classList.add('show');
-        
-        if(hamburgerBtn.classList.contains('active')) {
-            hamburgerBtn.classList.remove('active');
-            mobileMenu.classList.remove('open');
-        }
-    }
-
-    function closeAuthModal() {
-        authModal.classList.remove('show');
-        authForm.reset();
-    }
-
-    function updateModalUI() {
-        if (isLoginMode) {
-            modalTitle.textContent = 'Iniciar Sesión';
-            authSubmitBtn.textContent = 'Ingresar';
-            phoneGroup.style.display = 'none'; 
-            authPhone.removeAttribute('required');
-            authSwitchText.textContent = '¿No tienes cuenta?';
-            authSwitchLink.textContent = 'Regístrate aquí';
-        } else {
-            modalTitle.textContent = 'Registro';
-            authSubmitBtn.textContent = 'Crear cuenta';
-            phoneGroup.style.display = 'block'; 
-            authPhone.setAttribute('required', 'true');
-            authSwitchText.textContent = '¿Ya tienes cuenta?';
-            authSwitchLink.textContent = 'Inicia sesión aquí';
-        }
-    }
-
-    if (btnLogin) btnLogin.addEventListener('click', () => {
-    window.location.href = 'https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-in';
-    });
-    if (btnRegister) btnRegister.addEventListener('click', () => {
-    window.location.href = 'https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up';
-    });
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeAuthModal);
-    
-    window.addEventListener('click', (e) => {
-        if (e.target === authModal) closeAuthModal();
-    });
-
-    if (authSwitchLink) {
-        authSwitchLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            isLoginMode = !isLoginMode;
-            updateModalUI();
-        });
-    }
-
-    // 4. Validar inputs de celular (Solo números y + al inicio)
+    // 3. Validar inputs de celular (Solo números y + al inicio)
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     phoneInputs.forEach(input => {
         input.addEventListener('input', function(e) {
@@ -215,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Slider de Testimonios
+    // 4. Slider de Testimonios
     const track = document.getElementById('testimonialTrack');
     const cards = track ? track.querySelectorAll('.testimonial-card') : [];
     const dots = document.querySelectorAll('#testimonialDots .dot');
@@ -250,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Interruptor de Planes (Mensual / Anual)
+    // 5. Interruptor de Planes (Mensual / Anual)
     const billingToggle = document.getElementById('billingToggle');
     const labelMensual = document.getElementById('labelMensual');
     const labelAnual = document.getElementById('labelAnual');
@@ -289,12 +219,4 @@ document.addEventListener('DOMContentLoaded', () => {
         labelAnual.addEventListener('click', () => { isAnnual = true; updatePricing(); });
     }
 
-    // 7. Botones de Prueba/Comenzar abren el Modal de Registro
-    const actionRegisterBtns = document.querySelectorAll('.action-register-btn');
-    actionRegisterBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal('register');
-        });
-    });
 });
