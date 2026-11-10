@@ -9,6 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Enlaces con la apariencia de los botones originales */
+        a.refrio-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        @media (max-width: 992px) {
+            .header-right .nav-actions a.refrio-link {
+                width: 100%;
+                padding: 12px;
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- HEADER -->
@@ -27,8 +45,8 @@
                 <a href="#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
             <div class="nav-actions">
-                <button id="btnLogin" class="btn-outline" data-i18n="btn_login">INICIAR SESIÓN</button>
-                <button id="btnRegister" class="btn-primary" data-i18n="btn_register">REGISTRARSE</button>
+                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-in" class="btn-outline refrio-link" data-i18n="btn_login">INICIAR SESIÓN</a>
+                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-primary refrio-link" data-i18n="btn_register">REGISTRARSE</a>
             </div>
         </div>
 
@@ -52,7 +70,7 @@
         <div class="hero-content">
             <h1 data-i18n="hero_title">Sistema para la gestión de inventario y distribución de productos perecibles</h1>
             <h3 data-i18n="hero_subtitle">Monitorea temperatura, gestiona stock, reduce pérdidas y mejora tus operaciones logísticas desde un solo lugar.</h3>
-            <button class="btn-primary btn-large action-register-btn" data-i18n="btn_demo">PRUEBA AHORA</button>
+            <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-primary btn-large refrio-link" data-i18n="btn_demo">PRUEBA AHORA</a>
         </div>
     </section>
 
@@ -223,7 +241,7 @@
                     <li>✓ Monitoreo básico</li>
                     <li>✓ Control de temperatura</li>
                 </ul>
-                <button class="btn-outline action-register-btn">Comenzar</button>
+                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-outline refrio-link">Comenzar</a>
             </div>
             <div class="price-card professional">
                 <div class="badge">Más Popular</div>
@@ -236,7 +254,7 @@
                     <li>✓ Analítica avanzada + IA</li>
                     <li>✓ Soporte prioritario</li>
                 </ul>
-                <button class="btn-light action-register-btn">Comenzar</button>
+                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-light refrio-link">Comenzar</a>
             </div>
             <div class="price-card enterprise">
                 <h4>Empresarial</h4>
@@ -247,7 +265,7 @@
                     <li>✓ Módulos personalizados</li>
                     <li>✓ SLA garantizado</li>
                 </ul>
-                <button class="btn-outline action-register-btn">Contactar Ventas</button>
+                <a href="#contact" class="btn-outline refrio-link">Contactar Ventas</a>
             </div>
         </div>
     </section>
@@ -348,37 +366,6 @@
             <p>© 2026 Refrio. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <!-- MODAL DE INICIO DE SESIÓN / REGISTRO -->
-    <div id="authModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h2 id="modalTitle" class="title" style="font-size: 24px; margin-bottom: 24px; text-align: left;">Iniciar Sesión</h2>
-            <form id="authForm">
-                <div class="input-group">
-                    <label>Correo Electrónico *</label>
-                    <input type="email" id="authEmail" placeholder="ejemplo@empresa.com" required>
-                </div>
-                <!-- Campo de celular (solo visible en registro) -->
-                <div class="input-group" id="phoneGroup" style="display: none;">
-                    <label>Número de Celular *</label>
-                    <input type="tel" id="authPhone" placeholder="+51 999 888 777">
-                </div>
-                <div class="input-group">
-                    <label>Contraseña *</label>
-                    <input type="password" id="authPassword" placeholder="Min. 8 caracteres, 1 mayúscula y 1 número" 
-                           required 
-                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
-                           title="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula, una letra minúscula y un número.">
-                </div>
-                <button type="submit" class="btn-primary full-width" id="authSubmitBtn">Ingresar</button>
-            </form>
-            <div class="auth-switch">
-                <span id="authSwitchText">¿No tienes cuenta?</span> 
-                <a href="#" id="authSwitchLink">Regístrate aquí</a>
-            </div>
-        </div>
-    </div>
 
     <script src="assets/js/app.js"></script>
 </body>
