@@ -184,8 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (btnLogin) btnLogin.addEventListener('click', () => openModal('login'));
-    if (btnRegister) btnRegister.addEventListener('click', () => openModal('register'));
+    if (btnLogin) btnLogin.addEventListener('click', () => {
+    window.location.href = 'https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-in';
+    });
+    if (btnRegister) btnRegister.addEventListener('click', () => {
+    window.location.href = 'https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up';
+    });
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeAuthModal);
     
     window.addEventListener('click', (e) => {
