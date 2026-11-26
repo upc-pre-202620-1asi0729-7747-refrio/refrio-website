@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
             <div class="lang-toggle">
                 <span id="lang-es" class="active" onclick="switchLanguage('es')">Es</span> <span style="color:var(--text-gray)">|</span> <span id="lang-en" onclick="switchLanguage('en')">En</span>
             </div>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" data-i18n-aria-label="menu_open">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -100,40 +100,40 @@
 
     <!-- VENTAJAS -->
     <section id="features" class="features-section bg-dark">
-        <h2 class="title white-text" data-i18n="feat_title">Ventajas</h2>
-        <div class="grid features-grid">
-            <div class="feature-card glass">
-                <div class="icon-wrapper"><img src="assets/images/icon-temp.svg" alt="Temp"></div>
-                <h4 data-i18n="feat1_title">Control de Temperatura</h4>
-                <p data-i18n="feat1_desc">Monitoreo continuo y alertas automáticas para mantener la cadena de frío intacta en todo momento.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="icon-wrapper"><img src="assets/images/icon-gps.svg" alt="GPS"></div>
-                <h4 data-i18n="feat2_title">Rastreo GPS en Tiempo Real</h4>
-                <p data-i18n="feat2_desc">Visibilidad completa de tu flota con actualizaciones cada segundo y geofencing inteligente.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="icon-wrapper"><img src="assets/images/icon-analytics.svg" alt="Analítica"></div>
-                <h4 data-i18n="feat3_title">Analítica operativa</h4>
-                <p data-i18n="feat3_desc">Dashboards intuitivos con métricas clave y predicciones basadas en IA para optimizar rutas.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="icon-wrapper"><img src="assets/images/icon-inventory.svg" alt="Inventario"></div>
-                <h4 data-i18n="feat4_title">Gestión de Inventario</h4>
-                <p data-i18n="feat4_desc">Control automático de stock, alertas de vencimiento y optimización de espacios de almacenamiento.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="icon-wrapper"><img src="assets/images/icon-replenish.svg" alt="Reabastecimiento"></div>
-                <h4 data-i18n="feat5_title">Reabastecimiento inteligente</h4>
-                <p data-i18n="feat5_desc">Anticipa quiebres de stock y genera recomendaciones de reposición según demanda.</p>
-            </div>
-            <div class="feature-card glass">
-                <div class="icon-wrapper"><img src="assets/images/icon-dispatch.svg" alt="Despacho"></div>
-                <h4 data-i18n="feat6_title">Carga y despacho</h4>
-                <p data-i18n="feat6_desc">Algoritmos inteligentes que reducen tiempos de entrega y costos operativos hasta en un 30%.</p>
-            </div>
+    <h2 class="title white-text" data-i18n="feat_title">Ventajas</h2>
+    <div class="grid features-grid">
+        <div class="feature-card glass">
+            <div class="icon-wrapper"><img src="assets/images/icon-temp.svg" alt="Alertas"></div>
+            <h4 data-i18n="feat1_title">Alertas e Incidencias</h4>
+            <p data-i18n="feat1_desc">Notificaciones tempranas por vencimiento próximo, stock crítico y desviaciones operativas para actuar a tiempo.</p>
         </div>
-    </section>
+        <div class="feature-card glass">
+            <div class="icon-wrapper"><img src="assets/images/icon-gps.svg" alt="Trazabilidad"></div>
+            <h4 data-i18n="feat2_title">Trazabilidad de Despachos</h4>
+            <p data-i18n="feat2_desc">Seguimiento por estados desde el despacho hasta la recepción con certificados verificables de cadena de frío.</p>
+        </div>
+        <div class="feature-card glass">
+            <div class="icon-wrapper"><img src="assets/images/icon-analytics.svg" alt="Analítica"></div>
+            <h4 data-i18n="feat3_title">Analítica Operativa</h4>
+            <p data-i18n="feat3_desc">Dashboards intuitivos con métricas clave de rotación, nivel de mermas y cumplimiento en tiempo real.</p>
+        </div>
+        <div class="feature-card glass">
+            <div class="icon-wrapper"><img src="assets/images/icon-inventory.svg" alt="Inventario"></div>
+            <h4 data-i18n="feat4_title">Inventario Inteligente FEFO</h4>
+            <p data-i18n="feat4_desc">Priorización automática de lotes según fecha de caducidad (Primero en Vencer, Primero en Salir) para evitar pérdidas.</p>
+        </div>
+        <div class="feature-card glass">
+            <div class="icon-wrapper"><img src="assets/images/icon-replenish.svg" alt="Eventos"></div>
+            <h4 data-i18n="feat5_title">Control Basado en Eventos</h4>
+            <p data-i18n="feat5_desc">Registro auditable de cada hito en almacén: ingresos, bajas justificadas por merma y confirmaciones de entrega.</p>
+        </div>
+        <div class="feature-card glass">
+            <div class="icon-wrapper"><img src="assets/images/icon-dispatch.svg" alt="Despacho"></div>
+            <h4 data-i18n="feat6_title">Carga y Despacho Ágil</h4>
+            <p data-i18n="feat6_desc">Asignación automatizada de lotes y validación rápida de recepción entre proveedores y puntos de venta.</p>
+        </div>
+    </div>
+</section>
 
     <!-- PASOS -->
     <section id="steps" class="steps-section bg-light">
@@ -174,12 +174,12 @@
                 <!-- Testimonio 1 -->
                 <div class="testimonial-card active" data-index="0">
                     <div class="stars">★★★★★</div>
-                    <p class="quote">"Gracias a REFRIO hemos reducido nuestras mermas en un 40% durante el último trimestre. El control de temperatura en tiempo real nos salvó."</p>
+                    <p class="quote" data-i18n="testimonial1">"Gracias a REFRIO hemos reducido nuestras mermas en un 40% durante el último trimestre. El control de temperatura en tiempo real nos salvó."</p>
                     <div class="author">
                         <div class="avatar"><img src="assets/images/avatar.jpg" alt="Ing. Ernesto Castro"></div>
                         <div class="author-info">
                             <strong>Ing. Ernesto Castro</strong>
-                            <span>Gerente de Logística - Alimentos del Valle</span>
+                            <span data-i18n="testimonial1_role">Gerente de Logística - Alimentos del Valle</span>
                         </div>
                     </div>
                 </div>
@@ -187,12 +187,12 @@
                 <!-- Testimonio 2 -->
                 <div class="testimonial-card" data-index="1" style="display: none;">
                     <div class="stars">★★★★★</div>
-                    <p class="quote">"La plataforma es súper intuitiva. Desde que implementamos el rastreo y las alertas, hemos optimizado nuestras rutas de entrega un 25%."</p>
+                    <p class="quote" data-i18n="testimonial2">"La plataforma es súper intuitiva. Desde que implementamos el rastreo y las alertas, hemos optimizado nuestras rutas de entrega un 25%."</p>
                     <div class="author">
                         <div class="avatar"><img src="assets/images/avatar2.jpg" alt="Mariana Ruiz" onerror="this.src='assets/images/avatar.jpg'"></div>
                         <div class="author-info">
                             <strong>Mariana Ruiz</strong>
-                            <span>Jefa de Operaciones - Supermercados del Norte</span>
+                            <span data-i18n="testimonial2_role">Jefa de Operaciones - Supermercados del Norte</span>
                         </div>
                     </div>
                 </div>
@@ -200,12 +200,12 @@
                 <!-- Testimonio 3 -->
                 <div class="testimonial-card" data-index="2" style="display: none;">
                     <div class="stars">★★★★★</div>
-                    <p class="quote">"El soporte y la analítica automatizada nos permitieron escalar nuestra flota sin perder el control del stock. Es una herramienta indispensable hoy en día."</p>
+                    <p class="quote" data-i18n="testimonial3">"El soporte y la analítica automatizada nos permitieron escalar nuestra flota sin perder el control del stock. Es una herramienta indispensable hoy en día."</p>
                     <div class="author">
                         <div class="avatar"><img src="assets/images/avatar3.jpg" alt="Carlos Mendoza" onerror="this.src='assets/images/avatar.jpg'"></div>
                         <div class="author-info">
                             <strong>Carlos Mendoza</strong>
-                            <span>Director General - Distribuidora San Juan</span>
+                            <span data-i18n="testimonial3_role">Director General - Distribuidora San Juan</span>
                         </div>
                     </div>
                 </div>
@@ -226,67 +226,71 @@
         <p class="subtitle" data-i18n="prc_subtitle">Elige el plan que mejor se adapte a tu operación</p>
         
         <div class="pricing-toggle">
-            <span id="labelMensual" class="active" style="cursor: pointer;">Mensual</span>
+            <span id="labelMensual" class="active" data-i18n="billing_monthly" style="cursor: pointer;">Mensual</span>
             <div class="toggle-switch" id="billingToggle"></div>
-            <span id="labelAnual" style="cursor: pointer;">Anual</span>
+            <span id="labelAnual" data-i18n="billing_yearly" style="cursor: pointer;">Anual</span>
         </div>
         
         <div class="grid pricing-grid">
             <div class="price-card basic">
-                <h4>Básico</h4>
-                <p class="desc">Para pequeñas operaciones</p>
-                <h2 id="priceBasic">S/ 59 <span>/mo</span></h2>
+                <h4 data-i18n="plan_basic">Básico</h4>
+                <p class="desc" data-i18n="plan_basic_desc">Para pequeñas operaciones</p>
+                <h2 id="priceBasic">S/ 59 <span data-i18n="price_month">/mes</span></h2>
                 <ul>
-                    <li>✓ Hasta 5 unidades</li>
-                    <li>✓ Monitoreo básico</li>
-                    <li>✓ Control de temperatura</li>
+                    <li data-i18n="basic_f1">✓ Hasta 5 unidades</li>
+                    <li data-i18n="basic_f2">✓ Monitoreo básico</li>
+                    <li data-i18n="basic_f3">✓ Control de temperatura</li>
                 </ul>
-                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-outline refrio-link">Comenzar</a>
+                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-outline refrio-link" data-i18n="plan_start">Comenzar</a>
             </div>
             <div class="price-card professional">
-                <div class="badge">Más Popular</div>
-                <h4>Profesional</h4>
-                <p class="desc">Para operaciones en crecimiento</p>
-                <h2 id="pricePro">S/ 129 <span>/mo</span></h2>
+                <div class="badge" data-i18n="plan_popular">Más Popular</div>
+                <h4 data-i18n="plan_pro">Profesional</h4>
+                <p class="desc" data-i18n="plan_pro_desc">Para operaciones en crecimiento</p>
+                <h2 id="pricePro">S/ 129 <span data-i18n="price_month">/mes</span></h2>
                 <ul>
-                    <li>✓ Hasta 25 vehículos</li>
-                    <li>✓ Rastreo en tiempo real</li>
-                    <li>✓ Analítica avanzada + IA</li>
-                    <li>✓ Soporte prioritario</li>
+                    <li data-i18n="pro_f1">✓ Hasta 25 vehículos</li>
+                    <li data-i18n="pro_f2">✓ Rastreo en tiempo real</li>
+                    <li data-i18n="pro_f3">✓ Analítica avanzada + IA</li>
+                    <li data-i18n="pro_f4">✓ Soporte prioritario</li>
                 </ul>
-                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-light refrio-link">Comenzar</a>
+                <a href="https://upc-pre-202620-1asi0729-7747-refrio.github.io/refrio-frontend/sign-up" class="btn-light refrio-link" data-i18n="plan_start">Comenzar</a>
             </div>
             <div class="price-card enterprise">
-                <h4>Empresarial</h4>
-                <p class="desc">Para grandes flotas</p>
-                <h2 id="priceEnt">S/ 249 <span>/mo</span></h2>
+                <h4 data-i18n="plan_ent">Empresarial</h4>
+                <p class="desc" data-i18n="plan_ent_desc">Para grandes flotas</p>
+                <h2 id="priceEnt">S/ 249 <span data-i18n="price_month">/mes</span></h2>
                 <ul>
-                    <li>✓ Operación escalable</li>
-                    <li>✓ Módulos personalizados</li>
-                    <li>✓ SLA garantizado</li>
+                    <li data-i18n="ent_f1">✓ Operación escalable</li>
+                    <li data-i18n="ent_f2">✓ Módulos personalizados</li>
+                    <li data-i18n="ent_f3">✓ SLA garantizado</li>
                 </ul>
-                <a href="#contact" class="btn-outline refrio-link">Contactar Ventas</a>
+                <a href="#contact" class="btn-outline refrio-link" data-i18n="plan_contact">Contactar Ventas</a>
             </div>
         </div>
     </section>
 
     <!-- CONÓCENOS (VIDEOS) -->
     <section id="about-us" class="videos-section bg-gray">
-        <h2 class="title">Conócenos</h2>
-        <p class="subtitle">Conoce el equipo Refrio y la tecnología detrás de nuestra plataforma.</p>
+        <h2 class="title" data-i18n="team_title">Conócenos</h2>
+        <p class="subtitle" data-i18n="team_subtitle">Conoce el equipo Refrio y la tecnología detrás de nuestra plataforma.</p>
         <div class="grid videos-grid">
-            <div class="video-card">
-                <img src="assets/images/video1.jpg" alt="Nuestra Tecnología" class="video-thumb">
-                <div class="play-btn">▶</div>
+            <div class="video-card" data-youtube-id="XbwEG11q1ys">
+                <img src="assets/images/video1.jpg" alt="Nuestra Tecnología" data-i18n-alt="video_technology" class="video-thumb">
+                <button class="play-btn" type="button" aria-label="Reproducir video: Nuestra Tecnología" data-i18n-aria-label="play_technology">▶</button>
+                <iframe class="video-player" title="Nuestra Tecnología" data-i18n-title="video_technology" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a class="video-external" href="https://youtu.be/XbwEG11q1ys" target="_blank" rel="noopener noreferrer" data-i18n="watch_youtube">Ver en YouTube</a>
                 <div class="video-info">
-                    <h4>Nuestra Tecnología</h4>
+                    <h4 data-i18n="video_technology">Nuestra Tecnología</h4>
                 </div>
             </div>
-            <div class="video-card">
-                <img src="assets/images/video2.jpg" alt="Innovación en Logística" class="video-thumb">
-                <div class="play-btn">▶</div>
+            <div class="video-card" data-youtube-id="RkKN3gs4Y38">
+                <img src="assets/images/video2.jpg" alt="Innovación en Logística" data-i18n-alt="video_innovation" class="video-thumb">
+                <button class="play-btn" type="button" aria-label="Reproducir video: Innovación en Logística" data-i18n-aria-label="play_team">▶</button>
+                <iframe class="video-player" title="Innovación en Logística" data-i18n-title="video_innovation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a class="video-external" href="https://youtu.be/RkKN3gs4Y38" target="_blank" rel="noopener noreferrer" data-i18n="watch_youtube">Ver en YouTube</a>
                 <div class="video-info">
-                    <h4>Innovación en Logística: Conoce al equipo detrás de la plataforma Refrio</h4>
+                    <h4 data-i18n="video_innovation">Innovación en Logística: Conoce al equipo detrás de la plataforma Refrio</h4>
                 </div>
             </div>
         </div>
@@ -296,34 +300,34 @@
     <section id="contact" class="contact-section bg-dark">
         <div class="contact-container">
             <div class="contact-text">
-                <h2 class="white-text">Contacto</h2>
-                <h3 class="white-text" style="margin-top: 40px; margin-bottom: 20px;">Pruebe Refrio y maximice la rentabilidad de su inventario</h3>
-                <p class="white-text" style="opacity: 0.8; margin-bottom: 20px;">Más de 10,000 bodegas y empresas peruanas confían en nosotros para monitorear y garantizar la cadena de frío. Deja tus datos y nuestro equipo se contactará contigo para una demostración.</p>
+                <h2 class="white-text" data-i18n="contact_title">Contacto</h2>
+                <h3 class="white-text" data-i18n="contact_heading" style="margin-top: 40px; margin-bottom: 20px;">Pruebe Refrio y maximice la rentabilidad de su inventario</h3>
+                <p class="white-text" data-i18n="contact_desc" style="opacity: 0.8; margin-bottom: 20px;">Más de 10,000 bodegas y empresas peruanas confían en nosotros para monitorear y garantizar la cadena de frío. Deja tus datos y nuestro equipo se contactará contigo para una demostración.</p>
                 <ul class="contact-benefits">
-                    <li>✓ Sin compromisos</li>
-                    <li>✓ Respuesta inmediata</li>
-                    <li>✓ Soporte personalizado</li>
+                    <li data-i18n="contact_benefit1">✓ Sin compromisos</li>
+                    <li data-i18n="contact_benefit2">✓ Respuesta inmediata</li>
+                    <li data-i18n="contact_benefit3">✓ Soporte personalizado</li>
                 </ul>
             </div>
             <div class="contact-form-wrapper">
                 <form id="contactForm" class="form-card">
                     <div class="input-group">
-                        <label>Nombres y Apellidos *</label>
-                        <input type="text" placeholder="Ej. Juan Pérez" required>
+                        <label data-i18n="form_name">Nombres y Apellidos *</label>
+                        <input type="text" data-i18n-placeholder="form_name_placeholder" placeholder="Ej. Juan Pérez" required>
                     </div>
                     <div class="input-group">
-                        <label>Empresa / Razón Social *</label>
-                        <input type="text" placeholder="Ej. Empresa S.A." required>
+                        <label data-i18n="form_company">Empresa / Razón Social *</label>
+                        <input type="text" data-i18n-placeholder="form_company_placeholder" placeholder="Ej. Empresa S.A." required>
                     </div>
                     <div class="input-group">
-                        <label>Correo Electrónico *</label>
-                        <input type="email" placeholder="ejemplo@empresa.com" required>
+                        <label data-i18n="form_email">Correo Electrónico *</label>
+                        <input type="email" data-i18n-placeholder="form_email_placeholder" placeholder="ejemplo@empresa.com" required>
                     </div>
                     <div class="input-group">
-                        <label>Número de Celular *</label>
-                        <input type="tel" placeholder="+51 999 888 777" required>
+                        <label data-i18n="form_phone">Número de Celular *</label>
+                        <input type="tel" data-i18n-placeholder="form_phone_placeholder" placeholder="+51 999 888 777" required>
                     </div>
-                    <button type="submit" class="btn-primary full-width">Enviar Mensaje</button>
+                    <button type="submit" class="btn-primary full-width" data-i18n="form_submit">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
@@ -340,30 +344,30 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Producto</a></li>
-                    <li><a href="#">Características</a></li>
-                    <li><a href="#">Planes</a></li>
+                    <li><a href="#" data-i18n="footer_product">Producto</a></li>
+                    <li><a href="#" data-i18n="footer_features">Características</a></li>
+                    <li><a href="#" data-i18n="footer_plans">Planes</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Empresa</a></li>
-                    <li><a href="#">Quiénes Somos</a></li>
-                    <li><a href="#">Casos de Éxito</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#" data-i18n="footer_company">Empresa</a></li>
+                    <li><a href="#" data-i18n="footer_about">Quiénes Somos</a></li>
+                    <li><a href="#" data-i18n="footer_cases">Casos de Éxito</a></li>
+                    <li><a href="#" data-i18n="footer_contact">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Legal</a></li>
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#" data-i18n="footer_legal">Legal</a></li>
+                    <li><a href="#" data-i18n="footer_privacy">Privacidad</a></li>
+                    <li><a href="Terms-and-Condition.html" data-i18n="footer_terms">Términos</a></li>
+                    <li><a href="mailto:soporte@refrio.pe" data-i18n="footer_support">Soporte</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Refrio. Todos los derechos reservados.</p>
+            <p>© 2026 Refrio. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
